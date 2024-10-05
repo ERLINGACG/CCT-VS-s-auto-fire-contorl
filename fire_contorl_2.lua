@@ -1,12 +1,12 @@
 local Rad        =   peripheral.wrap("top")
 local C         =   peripheral.wrap("back")
  
- 
+ --写的比较赶，看起来很乱
 -- 获取实体数据并处理攻击动作
 function GetEntitydata()
     C.assemble()
     redstone.setAnalogOutput("back",0)   --初始化攻击动作
-    local Rad_data=Rad.scan("entity",40) --扫描实体，范围20格
+    local Rad_data=Rad.scan("entity",40) --扫描实体，范围40格
     local entity_pos_x={}
     local entity_pos_y={}
     local entity_pos_z={}
@@ -97,20 +97,7 @@ function GetEntitydata()
 end
  
 -- 实体扫描函数
-function  EntRAd()
-        local table1 = Rad.scan("entity",40) --扫描范围40格内的实体
-        if table1 == nil then
-            print("table1 is nil.")                 
-        else
-            for key, value in pairs(table1) do
-                local table2= value
-                       
-            end
-     
-        end
-     
-     
-     end
+
 -- 主循环，每次获取实体数据
 while true do
      GetEntitydata()
